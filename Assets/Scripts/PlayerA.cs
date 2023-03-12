@@ -5,8 +5,10 @@ using UnityEngine;
 public class PlayerA : MonoBehaviour
 {
 
-    public float paddleSpeed = 5f;
-    public float bounds = 3.16f;
+    [SerializeField]
+    float paddleSpeed = 5f;
+    [SerializeField]
+    float bounds = 3.16f;
 
     // Update is called once per frame
     void Update()
