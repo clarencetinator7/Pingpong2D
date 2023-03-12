@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerB : MonoBehaviour
 {
     public float paddleSpeed = 5f;
+    public float bounds = 3.16f;
 
     // Update is called once per frame
     void Update()
@@ -19,7 +20,7 @@ public class PlayerB : MonoBehaviour
         }
 
         // Keep paddle within screen bounds using clamp
-        float y = Mathf.Clamp(transform.position.y, -3.73f, 3.73f);
+        float y = Mathf.Clamp(transform.position.y, -(bounds), bounds);
         transform.position = new Vector2(transform.position.x, y);
 
     }
