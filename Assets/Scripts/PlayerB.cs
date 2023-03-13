@@ -4,24 +4,34 @@ using UnityEngine;
 
 public class PlayerB : MonoBehaviour
 {
-    public float paddleSpeed = 5f;
-    public float bounds = 3.16f;
+  public float paddleSpeed = 5f;
+  public float bounds = 3.16f;
 
-    // Update is called once per frame
-    void Update()
+  // Update is called once per frame
+  void Update()
+  {
+    // Move paddle up or down on key press
+    if (Input.GetKey(KeyCode.UpArrow))
     {
-        // Move paddle up or down on key press
-        if(Input.GetKey(KeyCode.UpArrow))
-        {
-            transform.Translate(Vector2.up * paddleSpeed * Time.deltaTime);
-        } else if (Input.GetKey(KeyCode.DownArrow))
-        {
-            transform.Translate(Vector2.down * paddleSpeed * Time.deltaTime);
-        }
-
-        // Keep paddle within screen bounds using clamp
-        float y = Mathf.Clamp(transform.position.y, -(bounds), bounds);
-        transform.position = new Vector2(transform.position.x, y);
-
+      transform.Translate(Vector2.up * paddleSpeed * Time.deltaTime);
     }
+    else if (Input.GetKey(KeyCode.DownArrow))
+    {
+      transform.Translate(Vector2.down * paddleSpeed * Time.deltaTime);
+    }
+
+    // Keep paddle within screen bounds using clamp
+    float y = Mathf.Clamp(transform.position.y, -(bounds), bounds);
+    transform.position = new Vector2(transform.position.x, y);
+
+  }
+
+  //   void OnCollisionEnter2D(Collision2D other)
+  //   {
+  //     if (other.gameObject.CompareTag("Ball"))
+  //     {
+  //       GameManager.lastHit = 'B';
+  //       print(GameManager.lastHit);
+  //     }
+  //   }
 }
