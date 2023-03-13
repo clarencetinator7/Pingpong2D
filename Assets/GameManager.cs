@@ -17,15 +17,15 @@ public class GameManager : MonoBehaviour
   public void scoreA()
   {
     playerAScore++;
-    // playerAScoreText.text = playerAScore.ToString();
-    print("Player A score: " + playerAScore + " Player B score: " + playerBScore);
+    playerAScoreText.text = playerAScore.ToString();
+    // print("Player A score: " + playerAScore + " Player B score: " + playerBScore);
   }
 
   public void scoreB()
   {
     playerBScore++;
-    // playerBScoreText.text = playerBScore.ToString();
-    print("Player A score: " + playerAScore + " Player B score: " + playerBScore);
+    playerBScoreText.text = playerBScore.ToString();
+    // print("Player A score: " + playerAScore + " Player B score: " + playerBScore);
   }
 
 
