@@ -8,11 +8,6 @@ public class CameraShake : MonoBehaviour
   public AnimationCurve curve;
   public bool start = false;
 
-  void Start()
-  {
-
-  }
-
   // Update is called once per frame
   void Update()
   {
@@ -21,6 +16,12 @@ public class CameraShake : MonoBehaviour
       start = false;
       StartCoroutine(Shaking());
     }
+  }
+
+  public void Shake(float sec)
+  {
+    duration = sec;
+    start = true;
   }
 
   IEnumerator Shaking()

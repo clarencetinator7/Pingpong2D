@@ -34,6 +34,9 @@ public class PlayerB : MonoBehaviour
   {
     if (other.gameObject.CompareTag("Ball"))
     {
+      // Shake camera on collision
+      Camera.main.GetComponent<CameraShake>().Shake(0.1f);
+
       hitCount++;
       // if hitCount > 5, decrease paddle size
       if (hitCount > 5 && transform.localScale.y > 2.0f)
