@@ -45,7 +45,16 @@ public class PlayerB : MonoBehaviour
         // adjust the bounds to match the new paddle size
         bounds = bounds + 0.05f;
       }
-      // TODO: Reset hit count
     }
+  }
+
+  public void Reset()
+  {
+    // Reset paddle size
+    transform.localScale = new Vector2(transform.localScale.x, 3.0f);
+    // Reset bounds
+    bounds = 3.16f;
+    // Reset hit count
+    hitCount = 0;
   }
 }

@@ -10,7 +10,7 @@ public class PlayerA : MonoBehaviour
   [SerializeField]
   float bounds = 3.16f;
 
-  float hitCount = 5;
+  float hitCount = 0;
 
   // Update is called once per frame
   void Update()
@@ -28,7 +28,6 @@ public class PlayerA : MonoBehaviour
     // Keep paddle within screen bounds using clamp
     float y = Mathf.Clamp(transform.position.y, -(bounds), bounds);
     transform.position = new Vector2(transform.position.x, y);
-
   }
 
   void OnCollisionEnter2D(Collision2D other)
@@ -49,4 +48,15 @@ public class PlayerA : MonoBehaviour
       // TODO: Reset hit count
     }
   }
+
+  public void Reset()
+  {
+    // Reset paddle size
+    transform.localScale = new Vector2(transform.localScale.x, 3.0f);
+    // Reset bounds
+    bounds = 3.16f;
+    // Reset hit count
+    hitCount = 0;
+  }
+
 }

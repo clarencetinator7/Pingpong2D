@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
   [SerializeField] TextMeshProUGUI playerBScoreText;
 
   [SerializeField] GameObject ball;
+  [SerializeField] GameObject paddleA;
+  [SerializeField] GameObject paddleB;
+
   GameObject ballInstance;
 
   public void Start()
@@ -47,6 +50,10 @@ public class GameManager : MonoBehaviour
   public void respawnBall()
   {
     ballInstance = Instantiate(ball, new Vector3(0, 0, 0), Quaternion.identity);
+
+    // Resets the paddle size
+    paddleA.GetComponent<PlayerA>().Reset();
+    paddleB.GetComponent<PlayerB>().Reset();
   }
 
   // Launch the ball in a random direction

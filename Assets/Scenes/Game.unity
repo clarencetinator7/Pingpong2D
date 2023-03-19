@@ -155,6 +155,8 @@ MonoBehaviour:
   playerAScoreText: {fileID: 1541676240}
   playerBScoreText: {fileID: 1782798962}
   ball: {fileID: 444384140681662422, guid: f8b2cf5c8292d0744b6b975089ed36ba, type: 3}
+  paddleA: {fileID: 624510307}
+  paddleB: {fileID: 1764661327}
 --- !u!4 &217717778
 Transform:
   m_ObjectHideFlags: 0
