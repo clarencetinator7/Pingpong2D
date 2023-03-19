@@ -43,25 +43,23 @@ public class GameManager : MonoBehaviour
     respawnBall();
   }
 
-  // TODO: Game Reset
+  // Respawn Ball at the center of the screen
   public void respawnBall()
   {
     ballInstance = Instantiate(ball, new Vector3(0, 0, 0), Quaternion.identity);
   }
 
-  public void startGame()
-  {
-
-  }
-
+  // Launch the ball in a random direction
   public void launchBall()
   {
 
-    // Random 1 or -1
+    // Random 1 or -1 (Left or Right)
     float randomX = Random.Range(0, 2) * 2 - 1;
-    print(randomX);
+    // For Y, to make sure it's not too vertical
     float randomY = Random.Range(-1f, 1f);
 
+    // Store the direction in a Vector2
+    // Since we are only concern with the direction, we normalize it
     Vector2 direction = new Vector2(randomX, randomY).normalized;
 
     ballInstance.GetComponent<Rigidbody2D>().velocity = direction * 10f;
