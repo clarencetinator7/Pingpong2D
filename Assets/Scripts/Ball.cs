@@ -19,9 +19,6 @@ public class Ball : MonoBehaviour
   {
     rb = GetComponent<Rigidbody2D>();
     gameManager = FindObjectOfType<GameManager>();
-
-    launchBall();
-
   }
 
   // Called when the ball collides with something
@@ -64,13 +61,13 @@ public class Ball : MonoBehaviour
     rb.velocity = direction * speed;
   }
 
-  private void launchBall()
-  {
+  // private void launchBall()
+  // {
 
-    float y = Random.Range(-1f, 1f);
-    direction = new Vector2(1, y).normalized;
-    rb.velocity = direction * speed;
+  //   float y = Random.Range(-1f, 1f);
+  //   direction = new Vector2(1, y).normalized;
+  //   rb.velocity = direction * speed;
 
-  }
+  // }
 
 }
