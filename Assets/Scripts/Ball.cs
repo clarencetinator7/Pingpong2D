@@ -5,6 +5,7 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
 
+  [SerializeField] GameObject explosionParticle;
   Vector2 direction = Vector2.one.normalized;
   GameManager gameManager;
 
@@ -17,20 +18,31 @@ public class Ball : MonoBehaviour
   // Called when the ball collides with something
   private void OnCollisionEnter2D(Collision2D collision)
   {
-    print("Ball collided with " + collision.gameObject.name);
     // If the ball collides with the out of bounds check, add a point to the other player
     if (collision.gameObject.name == "OutBoundsCheckA")
     {
       gameManager.scoreB();
       Destroy(gameObject);
+
+      PlayExplosionEffect();
       return;
     }
     else if (collision.gameObject.name == "OutBoundsCheckB")
     {
       gameManager.scoreA();
       Destroy(gameObject);
+
+      PlayExplosionEffect();
       return;
     }
+  }
+
+  //Play explosion particle
+  void PlayExplosionEffect()
+  {
+    GameObject particleInstance = Instantiate(explosionParticle, transform.position, Quaternion.identity);
+    particleInstance.GetComponent<ParticleSystem>().Play();
+    Destroy(particleInstance, 1f);
   }
 
 }

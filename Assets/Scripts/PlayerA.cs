@@ -45,7 +45,6 @@ public class PlayerA : MonoBehaviour
         // adjust the bounds to match the new paddle size
         bounds = bounds + 0.05f;
       }
-      // TODO: Reset hit count
     }
   }
 

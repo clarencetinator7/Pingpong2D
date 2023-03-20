@@ -136,5 +136,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18ee1ec6103172a49ac46a94d12a546c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  randomFactor: 0.5
+  explosionParticle: {fileID: 7840839500060202925, guid: 4dab23966db02f745b0d58462e85e7ef, type: 3}

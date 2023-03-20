@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
   float playerAScore = 0;
   float playerBScore = 0;
+  float ballSpeed = 10f;
 
   [SerializeField] TextMeshProUGUI playerAScoreText;
   [SerializeField] TextMeshProUGUI playerBScoreText;
@@ -69,7 +70,7 @@ public class GameManager : MonoBehaviour
     // Since we are only concern with the direction, we normalize it
     Vector2 direction = new Vector2(randomX, randomY).normalized;
 
-    ballInstance.GetComponent<Rigidbody2D>().velocity = direction * 10f;
+    ballInstance.GetComponent<Rigidbody2D>().velocity = direction * ballSpeed;
 
   }
 
