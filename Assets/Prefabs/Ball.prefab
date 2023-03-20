@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 444384140681662423}
   - component: {fileID: 444384140681662419}
   - component: {fileID: 444384140681662418}
-  - component: {fileID: 444384140681662417}
   - component: {fileID: -723357072331200867}
+  - component: {fileID: 444384140681662417}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Ball
@@ -125,19 +125,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &444384140681662417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 444384140681662422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18ee1ec6103172a49ac46a94d12a546c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosionParticle: {fileID: 7840839500060202925, guid: 4dab23966db02f745b0d58462e85e7ef, type: 3}
 --- !u!96 &-723357072331200867
 TrailRenderer:
   serializedVersion: 2
@@ -246,3 +233,16 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &444384140681662417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444384140681662422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ee1ec6103172a49ac46a94d12a546c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionParticle: {fileID: 7840839500060202925, guid: 4dab23966db02f745b0d58462e85e7ef, type: 3}

@@ -8,11 +8,13 @@ public class Ball : MonoBehaviour
   [SerializeField] GameObject explosionParticle;
   Vector2 direction = Vector2.one.normalized;
   GameManager gameManager;
+  SoundController soundManager;
 
   // Start is called before the first frame update
   void Start()
   {
     gameManager = FindObjectOfType<GameManager>();
+    soundManager = FindObjectOfType<SoundController>();
   }
 
   // Called when the ball collides with something
@@ -23,7 +25,8 @@ public class Ball : MonoBehaviour
     {
       gameManager.scoreB();
       Destroy(gameObject);
-
+      // Camera shake
+      Camera.main.GetComponent<CameraShake>().Shake(0.5f);
       PlayExplosionEffect();
       return;
     }
@@ -31,10 +34,15 @@ public class Ball : MonoBehaviour
     {
       gameManager.scoreA();
       Destroy(gameObject);
-
+      // Camera shake
+      Camera.main.GetComponent<CameraShake>().Shake(0.5f);
       PlayExplosionEffect();
       return;
     }
+
+    // If the ball collides with a paddle, play the ball hit sound effect
+    soundManager.PlayBallHit();
+
   }
 
   //Play explosion particle
