@@ -28,6 +28,8 @@ public class Ball : MonoBehaviour
       // Camera shake
       Camera.main.GetComponent<CameraShake>().Shake(0.5f);
       PlayExplosionEffect();
+      // Play explosion sound effect
+      soundManager.PlayBallExplode();
       return;
     }
     else if (collision.gameObject.name == "OutBoundsCheckB")
@@ -37,6 +39,8 @@ public class Ball : MonoBehaviour
       // Camera shake
       Camera.main.GetComponent<CameraShake>().Shake(0.5f);
       PlayExplosionEffect();
+      // Play explosion sound effect
+      soundManager.PlayBallExplode();
       return;
     }
 

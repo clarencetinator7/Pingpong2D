@@ -9,6 +9,7 @@ public class SoundController : MonoBehaviour
 
   // Sound Effect Clips
   public AudioClip ballHit;
+  public AudioClip ballExplode;
 
   void Start()
   {
@@ -20,6 +21,11 @@ public class SoundController : MonoBehaviour
   public void PlayBallHit()
   {
     audioSource.PlayOneShot(ballHit);
+  }
+
+  public void PlayBallExplode()
+  {
+    audioSource.PlayOneShot(ballExplode);
   }
 
 }
