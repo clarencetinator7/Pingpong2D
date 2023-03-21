@@ -5,6 +5,7 @@ using UnityEngine;
 public class SoundController : MonoBehaviour
 {
 
+  // Reference to the audio source component
   public AudioSource audioSource;
 
   // Sound Effect Clips
@@ -20,6 +21,7 @@ public class SoundController : MonoBehaviour
   // Play the ball hit sound effect
   public void PlayBallHit()
   {
+    // PlayOneShot() plays the sound effect once
     audioSource.PlayOneShot(ballHit);
   }
 

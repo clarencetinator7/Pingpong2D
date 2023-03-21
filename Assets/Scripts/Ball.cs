@@ -5,14 +5,17 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
 
+  // Reference to the explosion particle effect
   [SerializeField] GameObject explosionParticle;
-  Vector2 direction = Vector2.one.normalized;
+
+  // Reference to the game manager and sound manager 
   GameManager gameManager;
   SoundController soundManager;
 
   // Start is called before the first frame update
   void Start()
   {
+    // Initialize the game manager and sound manager object.
     gameManager = FindObjectOfType<GameManager>();
     soundManager = FindObjectOfType<SoundController>();
   }
@@ -23,10 +26,13 @@ public class Ball : MonoBehaviour
     // If the ball collides with the out of bounds check, add a point to the other player
     if (collision.gameObject.name == "OutBoundsCheckA")
     {
+      // Add a point to player B
       gameManager.scoreB();
+      // Destroy the ball
       Destroy(gameObject);
       // Camera shake
       Camera.main.GetComponent<CameraShake>().Shake(0.5f);
+      // Play explosion particle
       PlayExplosionEffect();
       // Play explosion sound effect
       soundManager.PlayBallExplode();
@@ -36,10 +42,8 @@ public class Ball : MonoBehaviour
     {
       gameManager.scoreA();
       Destroy(gameObject);
-      // Camera shake
       Camera.main.GetComponent<CameraShake>().Shake(0.5f);
       PlayExplosionEffect();
-      // Play explosion sound effect
       soundManager.PlayBallExplode();
       return;
     }
@@ -52,8 +56,11 @@ public class Ball : MonoBehaviour
   //Play explosion particle
   void PlayExplosionEffect()
   {
+    // Instantiate the explosion particle effect
     GameObject particleInstance = Instantiate(explosionParticle, transform.position, Quaternion.identity);
+    // Play the particle effect
     particleInstance.GetComponent<ParticleSystem>().Play();
+    // Destroy the particle effect after 1 second
     Destroy(particleInstance, 1f);
   }
 

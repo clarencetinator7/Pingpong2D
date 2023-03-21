@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class PlayerA : MonoBehaviour
 {
-
-  [SerializeField]
-  float paddleSpeed = 5f;
-  [SerializeField]
-  float bounds = 3.5f;
-
+  // SerializeField allows us to see the variable in the inspector
+  // regardless of its access modifier
+  [SerializeField] float paddleSpeed = 5f;
+  [SerializeField] float bounds = 3.5f;
   float hitCount = 0;
 
   // Update is called once per frame
@@ -25,22 +23,26 @@ public class PlayerA : MonoBehaviour
       transform.Translate(Vector2.down * paddleSpeed * Time.deltaTime);
     }
 
-    // Keep paddle within screen bounds using clamp
+    // Keep paddle within screen bounds using Mathf.Clamp()
+    // Without this the paddle will go off screen
     float y = Mathf.Clamp(transform.position.y, -(bounds), bounds);
     transform.position = new Vector2(transform.position.x, y);
   }
 
   void OnCollisionEnter2D(Collision2D other)
   {
+    // Check if the object we collided with has the tag "Ball"
     if (other.gameObject.CompareTag("Ball"))
     {
       // Shake camera on collision
       Camera.main.GetComponent<CameraShake>().Shake(0.1f);
 
+      // Increase hit count
       hitCount++;
       // if hitCount > 5, decrease paddle size
       if (hitCount > 5 && transform.localScale.y > 2.0f)
       {
+        // Decrease paddle size
         transform.localScale = new Vector2(transform.localScale.x, transform.localScale.y - 0.1f);
         // adjust the bounds to match the new paddle size
         bounds = bounds + 0.05f;
@@ -48,6 +50,8 @@ public class PlayerA : MonoBehaviour
     }
   }
 
+  // If new round is started, this function should be called
+  // to reset the paddle size and hit count
   public void Reset()
   {
     // Reset paddle size

@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class PlayerB : MonoBehaviour
 {
-  [SerializeField]
-  float paddleSpeed = 5f;
-  [SerializeField]
-  float bounds = 3.5f;
-
+  [SerializeField] float paddleSpeed = 5f;
+  [SerializeField] float bounds = 3.5f;
   float hitCount = 0;
 
   // Update is called once per frame
