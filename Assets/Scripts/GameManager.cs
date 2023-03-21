@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 
   float playerAScore = 0;
   float playerBScore = 0;
-  float ballSpeed = 10f;
+  [SerializeField] float ballSpeed = 20f;
 
   [SerializeField] TextMeshProUGUI playerAScoreText;
   [SerializeField] TextMeshProUGUI playerBScoreText;

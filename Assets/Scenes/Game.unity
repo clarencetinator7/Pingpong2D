@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d15d69049c50dac4c994cd749f24a328, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ballSpeed: 15
   playerAScoreText: {fileID: 1541676240}
   playerBScoreText: {fileID: 1782798962}
   ball: {fileID: 444384140681662422, guid: f8b2cf5c8292d0744b6b975089ed36ba, type: 3}
@@ -716,7 +717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1022690e3b160aa45a5493a2e85168c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  paddleSpeed: 10
+  paddleSpeed: 15
   bounds: 3.5
 --- !u!61 &624510309
 BoxCollider2D:
@@ -826,7 +827,7 @@ Transform:
   m_GameObject: {fileID: 624510307}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -7.858966, y: 0, z: -0.020068835}
-  m_LocalScale: {x: -0.16, y: 3, z: 1}
+  m_LocalScale: {x: 0.3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 284058569}
@@ -1309,7 +1310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af6c06dd5a95c2e4092b118d0a0ca5f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  paddleSpeed: 10
+  paddleSpeed: 15
   bounds: 3.5
 --- !u!61 &1764661330
 BoxCollider2D:
@@ -1419,7 +1420,7 @@ Transform:
   m_GameObject: {fileID: 1764661327}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 9.001035, y: 0, z: -0.020068835}
-  m_LocalScale: {x: -0.16, y: 3, z: 1}
+  m_LocalScale: {x: 0.3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 284058569}

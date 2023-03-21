@@ -26,7 +26,7 @@ public class CameraShake : MonoBehaviour
 
   IEnumerator Shaking()
   {
-    Vector3 originalPos = transform.position;
+    Vector3 originalPos = new Vector3(0, 0, -10);
     float elapsedTime = 0.0f;
 
     while (elapsedTime < duration)

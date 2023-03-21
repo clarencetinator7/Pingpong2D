@@ -7,7 +7,7 @@ public class PlayerB : MonoBehaviour
   [SerializeField]
   float paddleSpeed = 5f;
   [SerializeField]
-  float bounds = 3.16f;
+  float bounds = 3.5f;
 
   float hitCount = 0;
 
@@ -53,7 +53,7 @@ public class PlayerB : MonoBehaviour
     // Reset paddle size
     transform.localScale = new Vector2(transform.localScale.x, 3.0f);
     // Reset bounds
-    bounds = 3.16f;
+    bounds = 3.5f;
     // Reset hit count
     hitCount = 0;
   }
