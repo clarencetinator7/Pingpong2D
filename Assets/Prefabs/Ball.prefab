@@ -246,3 +246,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionParticle: {fileID: 7840839500060202925, guid: 4dab23966db02f745b0d58462e85e7ef, type: 3}
+  ballHitParticle: {fileID: 88225185497639680, guid: c32a7dfccdb5b6e4e8f7a431648463b4, type: 3}

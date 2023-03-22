@@ -7,6 +7,7 @@ public class Ball : MonoBehaviour
 
   // Reference to the explosion particle effect
   [SerializeField] GameObject explosionParticle;
+  [SerializeField] GameObject ballHitParticle;
 
   // Reference to the game manager and sound manager 
   GameManager gameManager;
@@ -47,6 +48,11 @@ public class Ball : MonoBehaviour
       soundManager.PlayBallExplode();
       return;
     }
+    else
+    {
+      // Play ball hit particle
+      PlayBallHitEffect();
+    }
 
     // If the ball collides with a paddle, play the ball hit sound effect
     soundManager.PlayBallHit();
@@ -63,5 +69,17 @@ public class Ball : MonoBehaviour
     // Destroy the particle effect after 1 second
     Destroy(particleInstance, 1f);
   }
+
+  void PlayBallHitEffect()
+  {
+    // Instantiate the explosion particle effect
+    GameObject particleInstance = Instantiate(ballHitParticle, transform.position, Quaternion.identity);
+    // Play the particle effect
+    particleInstance.GetComponent<ParticleSystem>().Play();
+    // Destroy the particle effect after 1 second
+    Destroy(particleInstance, 1f);
+  }
+
+
 
 }
